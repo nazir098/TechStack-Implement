@@ -7,8 +7,9 @@ import org.springframework.stereotype.Service;
 public class RabitmqConsumer {
 
     @RabbitListener(queues = {"${rabbitmq.queue.name}"})
-    public void consumer(String message){
+    public String consumer(String message){
         System.out.println("consumed rabitmq message is " + message);
+        return message;
 
     }
 }

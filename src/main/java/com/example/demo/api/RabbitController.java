@@ -3,6 +3,7 @@ package com.example.demo.api;
 import com.example.demo.domain.User;
 import com.example.demo.publisher.RabitmqJsonProducer;
 import com.example.demo.publisher.RabitmqProducer;
+import com.example.demo.subscriber.RabitmqConsumer;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -21,6 +22,9 @@ public class RabbitController {
     public RabbitController(RabitmqProducer rabitmqProducer) {
         this.rabitmqProducer = rabitmqProducer;
     }
+
+    @Autowired
+    RabitmqConsumer rabitmqConsumer;
 
     @GetMapping("/publish/message")
     public ResponseEntity<String> sendMessage(@RequestParam(name = "message")String message){

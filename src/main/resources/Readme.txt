@@ -16,3 +16,9 @@ Any new API is created must be handled in customAuthorization and Security confi
 docker>docker run --rm -it -p 15672:15672 -p 5672:5672 rabbitmq:3.10.5-management
          first port is rabbitmq spring from where spring boot will be connected
          second port is rabbitmq broker client/website
+
+##KAFKA AREA
+without springboot we need to configure a lot manually like
+>ConsumerFactoryBean
+>KafkaTemplate
+>ProducerFactory
