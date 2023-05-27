@@ -22,3 +22,10 @@ without springboot we need to configure a lot manually like
 >ConsumerFactoryBean
 >KafkaTemplate
 >ProducerFactory
+
+#run command in terminal
+>docker-compose up -d  ->this will start broker and zookeper
+>docker ps             ->just to confirm
+
+>docker exec --interactive --tty broker kafka-console-producer --bootstrap-server broker:9092 --topic customer.visit
+
